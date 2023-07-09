@@ -1,0 +1,48 @@
+section.keys {
+  background-color: var(--main-bg-color);
+  border-radius: $main-border-radius;
+  padding: $main-padding;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 20px;
+  .natural-numbers {
+    grid-area: 1/1/4/4;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  button {
+    border-radius: $main-border-radius;
+    padding: 10px;
+    @include keyBgWithShadow("main");
+    &.delete {
+    }
+    &.plus {
+    }
+    &.minus {
+    }
+    &.multiply {
+    }
+    &.reset {
+      grid-area: 5/1/6/3;
+    }
+    &.equal {
+      @include keyBgWithShadow("third");
+      grid-area: 5/3/6/5;
+      color: var(--second-text-color);
+    }
+    &.dot {
+    }
+    &.zero {
+    }
+    &.division {
+    }
+    &.btn-text {
+      @include keyBgWithShadow("second");
+      text-transform: uppercase;
+      color: var(--second-text-color);
+      font-size: 22px;
+    }
+  }
+}

@@ -5,8 +5,8 @@ html[data-theme="1"] {
   --second-text-color: hsl(0, 0%, 100%);
   --third-text-color: hsl(0, 0%, 100%);
   --screen-bg-color: hsl(222, 26%, 31%);
-  --main-bg-color: hsl(224, 36%, 15%);
-  --second-bg-color: hsl(223, 31%, 20%);
+  --second-bg-color: hsl(224, 36%, 15%);
+  --main-bg-color: hsl(223, 31%, 20%);
   --main-key-bg-color: hsl(30, 25%, 89%);
   --main-key-shadow-color: hsl(28, 16%, 65%);
   --second-key-bg-color: hsl(225, 21%, 49%);
@@ -141,14 +141,13 @@ html {
 }
 
 main {
-  width: 500px;
+  width: 450px;
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   color: var(--main-text-color);
-  border: 1px solid red;
   padding: 20px;
 }
 
@@ -189,8 +188,8 @@ header > div .theme-control {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 4px;
-  padding: 4px;
+  gap: 5px;
+  padding: 5px;
   border-radius: 20px;
 }
 header > div .theme-control button {
@@ -208,5 +207,56 @@ header > div .theme-control button::before {
   top: -5px;
   -webkit-transform: translate(-50%, -100%);
           transform: translate(-50%, -100%);
+}
+
+section.keypad {
+  background-color: var(--second-bg-color);
+  color: var(--second-text-color);
+  padding: 30px 25px;
+  border-radius: 6px;
+  text-align: end;
+  font-size: 40px;
+  margin: 25px 0 20px;
+}
+
+section.keys {
+  background-color: var(--main-bg-color);
+  border-radius: 6px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 20px;
+}
+section.keys .natural-numbers {
+  grid-area: 1/1/4/4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+section.keys button {
+  border-radius: 6px;
+  padding: 10px;
+  background-color: var(--main-key-bg-color);
+  -webkit-box-shadow: inset 0 -3px 0px var(--main-key-shadow-color);
+          box-shadow: inset 0 -3px 0px var(--main-key-shadow-color);
+}
+section.keys button.reset {
+  grid-area: 5/1/6/3;
+}
+section.keys button.equal {
+  background-color: var(--third-key-bg-color);
+  -webkit-box-shadow: inset 0 -3px 0px var(--third-key-shadow-color);
+          box-shadow: inset 0 -3px 0px var(--third-key-shadow-color);
+  grid-area: 5/3/6/5;
+  color: var(--second-text-color);
+}
+section.keys button.btn-text {
+  background-color: var(--second-key-bg-color);
+  -webkit-box-shadow: inset 0 -3px 0px var(--second-key-shadow-color);
+          box-shadow: inset 0 -3px 0px var(--second-key-shadow-color);
+  text-transform: uppercase;
+  color: var(--second-text-color);
+  font-size: 22px;
 }
 /*# sourceMappingURL=main.css.map */

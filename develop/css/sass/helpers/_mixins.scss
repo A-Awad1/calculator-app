@@ -1,30 +1,4 @@
-@mixin rtlStyle {
-  html[dir="rtl"] & {
-    @content;
-  }
-}
-
-@mixin content($english, $arabic) {
-  &::after {
-    content: $english;
-    @include rtlStyle {
-      content: $arabic;
-    }
-  }
-}
-
-@mixin overlay($color , $opacity){
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: if($color,$color,#000);
-  opacity: if($opacity,$opacity,0.75);
-}
-
-@mixin iconWithinButton($svg-size){
-  border: none;
-  background-color: transparent;
-  svg {
-    font-size: $svg-size;
-  }
+@mixin keyBgWithShadow($w) {
+  background-color: var(--#{$w}-key-bg-color);
+  box-shadow: inset 0 -3px 0px var(--#{$w}-key-shadow-color);
 }
