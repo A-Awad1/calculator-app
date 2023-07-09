@@ -1,6 +1,6 @@
 # Calculator App
 
-**Project Progress : ![0%](https://progress-bar.dev/0/?title=done)**
+**Project Progress : ![10%](https://progress-bar.dev/10/?title=done)**
 
 <!-- **[See Application Live]()** -->
 
@@ -9,7 +9,7 @@ This project is a challenge from [Frontend Mentor](https://www.frontendmentor.io
 ## Features:
 
 - Perform mathematical operations like addition, subtraction, multiplication, and division
-- Adjust the color theme based on their preference
+- Adjust between three color themes
 - See the size of the elements adjust based on their device's screen size
 - See hover states for all interactive elements on the page
 

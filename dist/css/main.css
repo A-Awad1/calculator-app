@@ -1,21 +1,50 @@
 /* Global Variables */
 /* Colors */
-/* 
-If >> dark - light Mode 
+html[data-theme="1"] {
+  --main-text-color: hsl(221, 14%, 31%);
+  --second-text-color: hsl(0, 0%, 100%);
+  --third-text-color: hsl(0, 0%, 100%);
+  --screen-bg-color: hsl(222, 26%, 31%);
+  --main-bg-color: hsl(224, 36%, 15%);
+  --second-bg-color: hsl(223, 31%, 20%);
+  --main-key-bg-color: hsl(30, 25%, 89%);
+  --main-key-shadow-color: hsl(28, 16%, 65%);
+  --second-key-bg-color: hsl(225, 21%, 49%);
+  --second-key-shadow-color: hsl(224, 28%, 35%);
+  --third-key-bg-color: hsl(6, 63%, 50%);
+  --third-key-shadow-color: hsl(6, 70%, 34%);
+}
 
-// global 
-html {
-  --sky-color: hsl(192, 100%, 67%);
+html[data-theme="2"] {
+  --main-text-color: hsl(60, 10%, 19%);
+  --second-text-color: hsl(0, 0%, 100%);
+  --third-text-color: hsl(0, 0%, 100%);
+  --screen-bg-color: hsl(0, 0%, 93%);
+  --main-bg-color: hsl(0, 0%, 90%);
+  --second-bg-color: hsl(0, 5%, 81%);
+  --main-key-bg-color: hsl(45, 7%, 89%);
+  --main-key-shadow-color: hsl(35, 11%, 61%);
+  --second-key-bg-color: hsl(185, 42%, 37%);
+  --second-key-shadow-color: hsl(185, 58%, 25%);
+  --third-key-bg-color: hsl(25, 98%, 40%);
+  --third-key-shadow-color: hsl(25, 99%, 27%);
 }
-// light mode
-html:not([dark-mode="true"]) {
-  --main-background-color: hsl(0, 0%, 98%); // Very Dark Desaturated Blue
+
+html[data-theme="3"] {
+  --main-text-color: hsl(52, 100%, 62%);
+  --second-text-color: hsl(0, 0%, 100%);
+  --third-text-color: hsl(198, 20%, 13%);
+  --screen-bg-color: hsl(268, 71%, 12%);
+  --main-bg-color: hsl(268, 75%, 9%);
+  --second-bg-color: hsl(268, 71%, 12%);
+  --main-key-bg-color: hsl(281, 89%, 26%);
+  --main-key-shadow-color: hsl(285, 91%, 52%);
+  --second-key-bg-color: hsl(268, 47%, 21%);
+  --second-key-shadow-color: hsl(290, 70%, 36%);
+  --third-key-bg-color: hsl(176, 100%, 44%);
+  --third-key-shadow-color: hsl(177, 92%, 70%);
 }
-// dark mode
-html[Dark-mode="true"] {
-  --main-background-color: hsl(235, 24%, 19%); // Very Dark Desaturated Blue
-}
-*/
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -51,6 +80,17 @@ optgroup {
   font-size: inherit;
   font-family: inherit;
   color: inherit;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+body {
+  background-color: var(--screen-bg-color);
+  font-size: 32px;
+  font-family: "League Spartan", sans-serif;
 }
 
 .container {
@@ -89,7 +129,7 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #171c26;
+  background-color: var(--main-text-color);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -97,6 +137,76 @@ html {
   border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb, ::-webkit-scrollbar-thumb:hover {
-  background-color: #ffffff;
+  background-color: var(--main-bg-color);
+}
+
+main {
+  width: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: var(--main-text-color);
+  border: 1px solid red;
+  padding: 20px;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: var(--second-text-color);
+}
+header h1 {
+  font-size: 24px;
+}
+header > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+header > div > span {
+  letter-spacing: 0.5px;
+}
+header > div .theme-control {
+  background-color: var(--main-bg-color);
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 20px;
+}
+header > div .theme-control button {
+  height: 11px;
+  width: 11px;
+  border-radius: 50%;
+  background-color: var(--third-key-bg-color);
+  position: relative;
+  counter-increment: theme;
+}
+header > div .theme-control button::before {
+  content: counter(theme);
+  position: absolute;
+  left: 50%;
+  top: -5px;
+  -webkit-transform: translate(-50%, -100%);
+          transform: translate(-50%, -100%);
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,41 +1,62 @@
 /* Global Variables */
-$Awesome: "Font Awesome 6 Free";
 $main-transition: 0.3s;
 $second-transition: 0.5s;
 $main-border-radius: 6px;
 $second-border-radius: 4px;
 $main-padding: 20px;
-$nav-width: 220px;
 
 /* Colors */
 
-// text
-$main-text-color: #171c26;
-$second-text-color: #464f60;
-$third-text-color: #687182;
-
-// background
-$main-background-color: #ffffff;
-$second-background-color: #f9fafc;
-$third-background-color: #2264e53d;
-
-// global
-$primary-color: #2264e5;
-$danger-color: #ad2a2a;
-
-/* 
-If >> dark - light Mode 
-
-// global 
-html {
-  --sky-color: hsl(192, 100%, 67%);
+html[data-theme="1"] {
+  // text
+  --main-text-color: hsl(221, 14%, 31%);
+  --second-text-color: hsl(0, 0%, 100%);
+  --third-text-color: hsl(0, 0%, 100%);
+  // background
+  --screen-bg-color: hsl(222, 26%, 31%);
+  --main-bg-color: hsl(224, 36%, 15%);
+  --second-bg-color: hsl(223, 31%, 20%); // keypad
+  // keys background - shadows
+  --main-key-bg-color: hsl(30, 25%, 89%);
+  --main-key-shadow-color: hsl(28, 16%, 65%);
+  --second-key-bg-color: hsl(225, 21%, 49%);
+  --second-key-shadow-color: hsl(224, 28%, 35%);
+  --third-key-bg-color: hsl(6, 63%, 50%);
+  --third-key-shadow-color: hsl(6, 70%, 34%);
 }
-// light mode
-html:not([dark-mode="true"]) {
-  --main-background-color: hsl(0, 0%, 98%); // Very Dark Desaturated Blue
+
+html[data-theme="2"] {
+  // text
+  --main-text-color: hsl(60, 10%, 19%);
+  --second-text-color: hsl(0, 0%, 100%);
+  --third-text-color: hsl(0, 0%, 100%);
+  // background
+  --screen-bg-color: hsl(0, 0%, 93%);
+  --main-bg-color: hsl(0, 0%, 90%);
+  --second-bg-color: hsl(0, 5%, 81%);
+  // keys background - shadows
+  --main-key-bg-color: hsl(45, 7%, 89%);
+  --main-key-shadow-color: hsl(35, 11%, 61%);
+  --second-key-bg-color: hsl(185, 42%, 37%);
+  --second-key-shadow-color: hsl(185, 58%, 25%);
+  --third-key-bg-color: hsl(25, 98%, 40%);
+  --third-key-shadow-color: hsl(25, 99%, 27%);
 }
-// dark mode
-html[Dark-mode="true"] {
-  --main-background-color: hsl(235, 24%, 19%); // Very Dark Desaturated Blue
+
+html[data-theme="3"] {
+  // text
+  --main-text-color: hsl(52, 100%, 62%);
+  --second-text-color: hsl(0, 0%, 100%);
+  --third-text-color: hsl(198, 20%, 13%);
+  // background
+  --screen-bg-color: hsl(268, 71%, 12%);
+  --main-bg-color: hsl(268, 75%, 9%);
+  --second-bg-color: hsl(268, 71%, 12%);
+  // keys background - shadows
+  --main-key-bg-color: hsl(281, 89%, 26%);
+  --main-key-shadow-color: hsl(285, 91%, 52%);
+  --second-key-bg-color: hsl(268, 47%, 21%);
+  --second-key-shadow-color: hsl(290, 70%, 36%);
+  --third-key-bg-color: hsl(176, 100%, 44%);
+  --third-key-shadow-color: hsl(177, 92%, 70%);
 }
-*/

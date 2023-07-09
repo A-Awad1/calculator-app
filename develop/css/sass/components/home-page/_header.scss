@@ -1,0 +1,42 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--second-text-color);
+  h1 {
+    font-size: 24px;
+  }
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-transform: uppercase;
+    font-size: 12px;
+    >span{
+      letter-spacing: .5px;
+    }
+    .theme-control {
+      background-color: var(--main-bg-color);
+      height: min-content;
+      display: flex;
+      gap: 4px;
+      padding: 4px;
+      border-radius: 20px;
+      button {
+        height: 11px;
+        width: 11px;
+        border-radius: 50%;
+        background-color: var(--third-key-bg-color);
+        position: relative;
+        counter-increment: theme;
+        &::before {
+          content: counter(theme);
+          position: absolute;
+          left: 50%;
+          top: -5px;
+          transform: translate(-50%, -100%);
+        }
+      }
+    }
+  }
+}

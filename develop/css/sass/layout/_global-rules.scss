@@ -28,3 +28,14 @@ optgroup {
   }
   color: inherit;
 }
+button {
+  border: none;
+  cursor: pointer;
+}
+body {
+  background-color: var(--screen-bg-color);
+  font: {
+    size: 32px;
+    family: "League Spartan", sans-serif;
+  }
+}
