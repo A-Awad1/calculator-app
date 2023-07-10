@@ -1,5 +1,5 @@
 doctype
-html(dir=dir,data-theme=2)
+html(dir=dir,data-theme=1)
   head
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
@@ -28,9 +28,9 @@ html(dir=dir,data-theme=2)
       section.keypad 399,981
       section.keys
         .natural-numbers
-          - var n = 1;
-          while n <= 9
-            button(data-value=n) #{n++}
+          - var n = 9;
+          while n >= 1
+            button(data-value=n) #{n--}
         button.delete.btn-text del
         button.plus +
         button.minus -

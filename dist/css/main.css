@@ -2,50 +2,59 @@
 /* Colors */
 html[data-theme="1"] {
   --header-text-color: hsl(0, 0%, 100%);
-  --main-key-text-color: hsl(221, 14%, 31%);
-  --second-key-text-color: hsl(0, 0%, 100%);
-  --third-key-text-color: hsl(0, 0%, 100%);
   --screen-bg-color: hsl(222, 26%, 31%);
   --main-bg-color: hsl(223, 31%, 20%);
   --second-bg-color: hsl(224, 36%, 15%);
+  --main-key-text-color: hsl(221, 14%, 31%);
+  --second-key-text-color: hsl(0, 0%, 100%);
+  --third-key-text-color: hsl(0, 0%, 100%);
   --main-key-bg-color: hsl(30, 25%, 89%);
   --main-key-shadow-color: hsl(28, 16%, 65%);
+  --main-key-hover-color: hsl(0, 0%, 100%);
   --second-key-bg-color: hsl(225, 21%, 49%);
   --second-key-shadow-color: hsl(224, 28%, 35%);
+  --second-key-hover-color: hsl(226, 51%, 77%);
   --third-key-bg-color: hsl(6, 63%, 50%);
   --third-key-shadow-color: hsl(6, 70%, 34%);
+  --third-key-hover-color: hsl(7, 82%, 65%);
 }
 
 html[data-theme="2"] {
   --header-text-color: hsl(60, 10%, 19%);
-  --main-key-text-color: hsl(60, 10%, 19%);
-  --second-key-text-color: hsl(0, 0%, 100%);
-  --third-key-text-color: hsl(0, 0%, 100%);
   --screen-bg-color: hsl(0, 0%, 90%);
   --main-bg-color: hsl(0, 5%, 81%);
   --second-bg-color: hsl(0, 0%, 93%);
+  --main-key-text-color: hsl(60, 10%, 19%);
+  --second-key-text-color: hsl(0, 0%, 100%);
+  --third-key-text-color: hsl(0, 0%, 100%);
   --main-key-bg-color: hsl(45, 7%, 89%);
   --main-key-shadow-color: hsl(35, 11%, 61%);
+  --main-key-hover-color: hsl(0, 0%, 100%);
   --second-key-bg-color: hsl(185, 42%, 37%);
   --second-key-shadow-color: hsl(185, 58%, 25%);
+  --second-key-hover-color: hsl(186, 37%, 59%);
   --third-key-bg-color: hsl(25, 98%, 40%);
   --third-key-shadow-color: hsl(25, 99%, 27%);
+  --third-key-hover-color: hsl(27, 91%, 59%);
 }
 
 html[data-theme="3"] {
   --header-text-color: hsl(52, 100%, 62%);
-  --main-key-text-color: hsl(52, 100%, 62%);
-  --second-key-text-color: hsl(0, 0%, 100%);
-  --third-key-text-color: hsl(198, 20%, 13%);
   --screen-bg-color: hsl(268, 75%, 9%);
   --main-bg-color: hsl(268, 71%, 12%);
   --second-bg-color: hsl(268, 71%, 12%);
+  --main-key-text-color: hsl(52, 100%, 62%);
+  --second-key-text-color: hsl(0, 0%, 100%);
+  --third-key-text-color: hsl(198, 20%, 13%);
   --main-key-bg-color: hsl(268, 47%, 21%);
   --main-key-shadow-color: hsl(290, 70%, 36%);
+  --main-key-hover-color: hsl(266, 53%, 44%);
   --second-key-bg-color: hsl(281, 89%, 26%);
   --second-key-shadow-color: hsl(285, 91%, 52%);
+  --second-key-hover-color: hsl(277, 55%, 45%);
   --third-key-bg-color: hsl(176, 100%, 44%);
   --third-key-shadow-color: hsl(177, 92%, 70%);
+  --third-key-hover-color: hsl(176, 100%, 82%);
 }
 
 * {
@@ -88,6 +97,8 @@ optgroup {
 button {
   border: none;
   cursor: pointer;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
 }
 
 body {
@@ -181,6 +192,7 @@ header > div {
 }
 header > div > span {
   letter-spacing: 0.5px;
+  font-size: 10px;
 }
 header > div .theme-control {
   background-color: var(--main-bg-color);
@@ -202,11 +214,14 @@ header > div .theme-control button {
   position: relative;
   counter-increment: theme;
 }
+header > div .theme-control button:hover {
+  background-color: var(--third-key-hover-color);
+}
 header > div .theme-control button::before {
   content: counter(theme);
   position: absolute;
   left: 50%;
-  top: -5px;
+  top: -7px;
   -webkit-transform: translate(-50%, -100%);
           transform: translate(-50%, -100%);
 }
@@ -235,33 +250,43 @@ section.keys .natural-numbers {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  direction: rtl;
 }
 section.keys button {
-  border-radius: 6px;
-  padding: 10px;
   color: var(--main-key-text-color);
   background-color: var(--main-key-bg-color);
-  -webkit-box-shadow: inset 0 -6px 0px -3px var(--main-key-shadow-color);
-          box-shadow: inset 0 -6px 0px -3px var(--main-key-shadow-color);
+  -webkit-box-shadow: inset 0 -4px 0px -1px var(--main-key-shadow-color);
+          box-shadow: inset 0 -4px 0px -1px var(--main-key-shadow-color);
+  border-radius: 6px;
+  padding: 10px;
   position: relative;
   overflow: hidden;
+}
+section.keys button:hover {
+  background-color: var(--main-key-hover-color);
 }
 section.keys button.reset {
   grid-area: 5/1/6/3;
 }
 section.keys button.equal {
-  background-color: var(--third-key-bg-color);
-  -webkit-box-shadow: inset 0 -6px 0px -3px var(--third-key-shadow-color);
-          box-shadow: inset 0 -6px 0px -3px var(--third-key-shadow-color);
-  grid-area: 5/3/6/5;
   color: var(--third-key-text-color);
+  background-color: var(--third-key-bg-color);
+  -webkit-box-shadow: inset 0 -4px 0px -1px var(--third-key-shadow-color);
+          box-shadow: inset 0 -4px 0px -1px var(--third-key-shadow-color);
+  grid-area: 5/3/6/5;
+}
+section.keys button.equal:hover {
+  background-color: var(--third-key-hover-color);
 }
 section.keys button.btn-text {
-  background-color: var(--second-key-bg-color);
-  -webkit-box-shadow: inset 0 -6px 0px -3px var(--second-key-shadow-color);
-          box-shadow: inset 0 -6px 0px -3px var(--second-key-shadow-color);
-  text-transform: uppercase;
   color: var(--second-key-text-color);
+  background-color: var(--second-key-bg-color);
+  -webkit-box-shadow: inset 0 -4px 0px -1px var(--second-key-shadow-color);
+          box-shadow: inset 0 -4px 0px -1px var(--second-key-shadow-color);
+  text-transform: uppercase;
   font-size: 22px;
+}
+section.keys button.btn-text:hover {
+  background-color: var(--second-key-hover-color);
 }
 /*# sourceMappingURL=main.css.map */

@@ -31,6 +31,7 @@ optgroup {
 button {
   border: none;
   cursor: pointer;
+  transition: background-color $main-transition;
 }
 body {
   background-color: var(--screen-bg-color);

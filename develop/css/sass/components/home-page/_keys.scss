@@ -11,12 +11,12 @@ section.keys {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    direction: rtl;
   }
   button {
+    @include keyColors("main");
     border-radius: $main-border-radius;
     padding: 10px;
-    color: var(--main-key-text-color);
-    @include keyBgWithShadow("main");
     position: relative;
     overflow: hidden;
     &.delete {
@@ -31,9 +31,8 @@ section.keys {
       grid-area: 5/1/6/3;
     }
     &.equal {
-      @include keyBgWithShadow("third");
+      @include keyColors("third");
       grid-area: 5/3/6/5;
-      color: var(--third-key-text-color);
     }
     &.dot {
     }
@@ -42,9 +41,8 @@ section.keys {
     &.division {
     }
     &.btn-text {
-      @include keyBgWithShadow("second");
+      @include keyColors("second");
       text-transform: uppercase;
-      color: var(--second-key-text-color);
       font-size: 22px;
     }
   }
