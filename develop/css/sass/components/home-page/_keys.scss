@@ -19,26 +19,12 @@ section.keys {
     padding: 10px;
     position: relative;
     overflow: hidden;
-    &.delete {
-    }
-    &.plus {
-    }
-    &.minus {
-    }
-    &.multiply {
-    }
     &.reset {
       grid-area: 5/1/6/3;
     }
     &.equal {
       @include keyColors("third");
       grid-area: 5/3/6/5;
-    }
-    &.dot {
-    }
-    &.zero {
-    }
-    &.division {
     }
     &.btn-text {
       @include keyColors("second");
