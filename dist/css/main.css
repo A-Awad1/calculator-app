@@ -1,12 +1,13 @@
 /* Global Variables */
 /* Colors */
 html[data-theme="1"] {
-  --main-text-color: hsl(221, 14%, 31%);
-  --second-text-color: hsl(0, 0%, 100%);
-  --third-text-color: hsl(0, 0%, 100%);
+  --header-text-color: hsl(0, 0%, 100%);
+  --main-key-text-color: hsl(221, 14%, 31%);
+  --second-key-text-color: hsl(0, 0%, 100%);
+  --third-key-text-color: hsl(0, 0%, 100%);
   --screen-bg-color: hsl(222, 26%, 31%);
-  --second-bg-color: hsl(224, 36%, 15%);
   --main-bg-color: hsl(223, 31%, 20%);
+  --second-bg-color: hsl(224, 36%, 15%);
   --main-key-bg-color: hsl(30, 25%, 89%);
   --main-key-shadow-color: hsl(28, 16%, 65%);
   --second-key-bg-color: hsl(225, 21%, 49%);
@@ -16,12 +17,13 @@ html[data-theme="1"] {
 }
 
 html[data-theme="2"] {
-  --main-text-color: hsl(60, 10%, 19%);
-  --second-text-color: hsl(0, 0%, 100%);
-  --third-text-color: hsl(0, 0%, 100%);
-  --screen-bg-color: hsl(0, 0%, 93%);
-  --main-bg-color: hsl(0, 0%, 90%);
-  --second-bg-color: hsl(0, 5%, 81%);
+  --header-text-color: hsl(60, 10%, 19%);
+  --main-key-text-color: hsl(60, 10%, 19%);
+  --second-key-text-color: hsl(0, 0%, 100%);
+  --third-key-text-color: hsl(0, 0%, 100%);
+  --screen-bg-color: hsl(0, 0%, 90%);
+  --main-bg-color: hsl(0, 5%, 81%);
+  --second-bg-color: hsl(0, 0%, 93%);
   --main-key-bg-color: hsl(45, 7%, 89%);
   --main-key-shadow-color: hsl(35, 11%, 61%);
   --second-key-bg-color: hsl(185, 42%, 37%);
@@ -31,16 +33,17 @@ html[data-theme="2"] {
 }
 
 html[data-theme="3"] {
-  --main-text-color: hsl(52, 100%, 62%);
-  --second-text-color: hsl(0, 0%, 100%);
-  --third-text-color: hsl(198, 20%, 13%);
-  --screen-bg-color: hsl(268, 71%, 12%);
-  --main-bg-color: hsl(268, 75%, 9%);
+  --header-text-color: hsl(52, 100%, 62%);
+  --main-key-text-color: hsl(52, 100%, 62%);
+  --second-key-text-color: hsl(0, 0%, 100%);
+  --third-key-text-color: hsl(198, 20%, 13%);
+  --screen-bg-color: hsl(268, 75%, 9%);
+  --main-bg-color: hsl(268, 71%, 12%);
   --second-bg-color: hsl(268, 71%, 12%);
-  --main-key-bg-color: hsl(281, 89%, 26%);
-  --main-key-shadow-color: hsl(285, 91%, 52%);
-  --second-key-bg-color: hsl(268, 47%, 21%);
-  --second-key-shadow-color: hsl(290, 70%, 36%);
+  --main-key-bg-color: hsl(268, 47%, 21%);
+  --main-key-shadow-color: hsl(290, 70%, 36%);
+  --second-key-bg-color: hsl(281, 89%, 26%);
+  --second-key-shadow-color: hsl(285, 91%, 52%);
   --third-key-bg-color: hsl(176, 100%, 44%);
   --third-key-shadow-color: hsl(177, 92%, 70%);
 }
@@ -147,7 +150,6 @@ main {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  color: var(--main-text-color);
   padding: 20px;
 }
 
@@ -161,7 +163,7 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: var(--second-text-color);
+  color: var(--header-text-color);
 }
 header h1 {
   font-size: 24px;
@@ -211,7 +213,7 @@ header > div .theme-control button::before {
 
 section.keypad {
   background-color: var(--second-bg-color);
-  color: var(--second-text-color);
+  color: var(--header-text-color);
   padding: 30px 25px;
   border-radius: 6px;
   text-align: end;
@@ -237,26 +239,29 @@ section.keys .natural-numbers {
 section.keys button {
   border-radius: 6px;
   padding: 10px;
+  color: var(--main-key-text-color);
   background-color: var(--main-key-bg-color);
-  -webkit-box-shadow: inset 0 -3px 0px var(--main-key-shadow-color);
-          box-shadow: inset 0 -3px 0px var(--main-key-shadow-color);
+  -webkit-box-shadow: inset 0 -6px 0px -3px var(--main-key-shadow-color);
+          box-shadow: inset 0 -6px 0px -3px var(--main-key-shadow-color);
+  position: relative;
+  overflow: hidden;
 }
 section.keys button.reset {
   grid-area: 5/1/6/3;
 }
 section.keys button.equal {
   background-color: var(--third-key-bg-color);
-  -webkit-box-shadow: inset 0 -3px 0px var(--third-key-shadow-color);
-          box-shadow: inset 0 -3px 0px var(--third-key-shadow-color);
+  -webkit-box-shadow: inset 0 -6px 0px -3px var(--third-key-shadow-color);
+          box-shadow: inset 0 -6px 0px -3px var(--third-key-shadow-color);
   grid-area: 5/3/6/5;
-  color: var(--second-text-color);
+  color: var(--third-key-text-color);
 }
 section.keys button.btn-text {
   background-color: var(--second-key-bg-color);
-  -webkit-box-shadow: inset 0 -3px 0px var(--second-key-shadow-color);
-          box-shadow: inset 0 -3px 0px var(--second-key-shadow-color);
+  -webkit-box-shadow: inset 0 -6px 0px -3px var(--second-key-shadow-color);
+          box-shadow: inset 0 -6px 0px -3px var(--second-key-shadow-color);
   text-transform: uppercase;
-  color: var(--second-text-color);
+  color: var(--second-key-text-color);
   font-size: 22px;
 }
 /*# sourceMappingURL=main.css.map */

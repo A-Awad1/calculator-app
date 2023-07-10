@@ -15,7 +15,10 @@ section.keys {
   button {
     border-radius: $main-border-radius;
     padding: 10px;
+    color: var(--main-key-text-color);
     @include keyBgWithShadow("main");
+    position: relative;
+    overflow: hidden;
     &.delete {
     }
     &.plus {
@@ -30,7 +33,7 @@ section.keys {
     &.equal {
       @include keyBgWithShadow("third");
       grid-area: 5/3/6/5;
-      color: var(--second-text-color);
+      color: var(--third-key-text-color);
     }
     &.dot {
     }
@@ -41,7 +44,7 @@ section.keys {
     &.btn-text {
       @include keyBgWithShadow("second");
       text-transform: uppercase;
-      color: var(--second-text-color);
+      color: var(--second-key-text-color);
       font-size: 22px;
     }
   }

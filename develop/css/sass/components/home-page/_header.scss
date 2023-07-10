@@ -2,7 +2,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: var(--second-text-color);
+  color: var(--header-text-color);
   h1 {
     font-size: 24px;
   }
@@ -12,8 +12,8 @@ header {
     gap: 20px;
     text-transform: uppercase;
     font-size: 12px;
-    >span{
-      letter-spacing: .5px;
+    > span {
+      letter-spacing: 0.5px;
     }
     .theme-control {
       background-color: var(--main-bg-color);

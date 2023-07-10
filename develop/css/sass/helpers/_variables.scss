@@ -9,13 +9,14 @@ $main-padding: 20px;
 
 html[data-theme="1"] {
   // text
-  --main-text-color: hsl(221, 14%, 31%);
-  --second-text-color: hsl(0, 0%, 100%);
-  --third-text-color: hsl(0, 0%, 100%);
+  --header-text-color: hsl(0, 0%, 100%);
+  --main-key-text-color: hsl(221, 14%, 31%);
+  --second-key-text-color: hsl(0, 0%, 100%);
+  --third-key-text-color: hsl(0, 0%, 100%);
   // background
   --screen-bg-color: hsl(222, 26%, 31%);
-  --second-bg-color: hsl(224, 36%, 15%);
   --main-bg-color: hsl(223, 31%, 20%);
+  --second-bg-color: hsl(224, 36%, 15%);
   // keys background - shadows
   --main-key-bg-color: hsl(30, 25%, 89%);
   --main-key-shadow-color: hsl(28, 16%, 65%);
@@ -27,13 +28,14 @@ html[data-theme="1"] {
 
 html[data-theme="2"] {
   // text
-  --main-text-color: hsl(60, 10%, 19%);
-  --second-text-color: hsl(0, 0%, 100%);
-  --third-text-color: hsl(0, 0%, 100%);
+  --header-text-color: hsl(60, 10%, 19%);
+  --main-key-text-color: hsl(60, 10%, 19%);
+  --second-key-text-color: hsl(0, 0%, 100%);
+  --third-key-text-color: hsl(0, 0%, 100%);
   // background
-  --screen-bg-color: hsl(0, 0%, 93%);
-  --main-bg-color: hsl(0, 0%, 90%);
-  --second-bg-color: hsl(0, 5%, 81%);
+  --screen-bg-color: hsl(0, 0%, 90%);
+  --main-bg-color: hsl(0, 5%, 81%);
+  --second-bg-color: hsl(0, 0%, 93%);
   // keys background - shadows
   --main-key-bg-color: hsl(45, 7%, 89%);
   --main-key-shadow-color: hsl(35, 11%, 61%);
@@ -45,18 +47,19 @@ html[data-theme="2"] {
 
 html[data-theme="3"] {
   // text
-  --main-text-color: hsl(52, 100%, 62%);
-  --second-text-color: hsl(0, 0%, 100%);
-  --third-text-color: hsl(198, 20%, 13%);
+  --header-text-color: hsl(52, 100%, 62%);
+  --main-key-text-color: hsl(52, 100%, 62%);
+  --second-key-text-color: hsl(0, 0%, 100%);
+  --third-key-text-color: hsl(198, 20%, 13%);
   // background
-  --screen-bg-color: hsl(268, 71%, 12%);
-  --main-bg-color: hsl(268, 75%, 9%);
+  --screen-bg-color: hsl(268, 75%, 9%);
+  --main-bg-color: hsl(268, 71%, 12%);
   --second-bg-color: hsl(268, 71%, 12%);
   // keys background - shadows
-  --main-key-bg-color: hsl(281, 89%, 26%);
-  --main-key-shadow-color: hsl(285, 91%, 52%);
-  --second-key-bg-color: hsl(268, 47%, 21%);
-  --second-key-shadow-color: hsl(290, 70%, 36%);
+  --main-key-bg-color: hsl(268, 47%, 21%);
+  --main-key-shadow-color: hsl(290, 70%, 36%);
+  --second-key-bg-color: hsl(281, 89%, 26%);
+  --second-key-shadow-color: hsl(285, 91%, 52%);
   --third-key-bg-color: hsl(176, 100%, 44%);
   --third-key-shadow-color: hsl(177, 92%, 70%);
 }
