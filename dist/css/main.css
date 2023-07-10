@@ -107,33 +107,6 @@ body {
   font-family: "League Spartan", sans-serif;
 }
 
-.container {
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: auto;
-  margin-right: auto;
-}
-@media (max-width: 768px) {
-  .container {
-    width: 100%;
-  }
-}
-@media (min-width: 768.1px) {
-  .container {
-    width: 750px;
-  }
-}
-@media (min-width: 992.1px) {
-  .container {
-    width: 970px;
-  }
-}
-@media (min-width: 1200.1px) {
-  .container {
-    width: 1170px;
-  }
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -155,13 +128,32 @@ html {
 }
 
 main {
-  width: 450px;
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   padding: 20px;
+  width: 450px;
+}
+@media (max-width: 768px) {
+  main {
+    padding: 5px;
+    width: 350px;
+  }
+}
+@media (max-width: 375px) {
+  main {
+    width: 100%;
+    min-width: -webkit-fit-content;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+  }
 }
 
 header {
@@ -231,9 +223,14 @@ section.keypad {
   color: var(--header-text-color);
   padding: 30px 25px;
   border-radius: 6px;
-  text-align: end;
   font-size: 40px;
   margin: 25px 0 20px;
+  text-align: end;
+}
+@media (max-width: 375px) {
+  section.keypad {
+    text-align: center;
+  }
 }
 
 section.keys {
@@ -264,6 +261,20 @@ section.keys button {
 }
 section.keys button:hover {
   background-color: var(--main-key-hover-color);
+}
+@media (max-width: 375px) {
+  section.keys button {
+    padding: 3px;
+    min-width: 30px;
+  }
+}
+section.keys button.delete::before {
+  content: "del";
+}
+@media (max-width: 375px) {
+  section.keys button.delete::before {
+    content: "d";
+  }
 }
 section.keys button.reset {
   grid-area: 5/1/6/3;

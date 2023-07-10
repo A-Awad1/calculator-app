@@ -17,8 +17,18 @@ section.keys {
     @include keyColors("main");
     border-radius: $main-border-radius;
     padding: 10px;
+    @include underLargeMobile {
+      padding: 3px;
+      min-width: 30px;
+    }
     position: relative;
     overflow: hidden;
+    &.delete::before {
+      content: "del";
+      @include underLargeMobile {
+        content: "d";
+      }
+    }
     &.reset {
       grid-area: 5/1/6/3;
     }

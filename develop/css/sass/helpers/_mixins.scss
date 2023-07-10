@@ -6,3 +6,13 @@
     background-color: var(--#{$w}-key-hover-color);
   }
 }
+@mixin underLargeMobile {
+  @media (max-width: 375px) {
+    @content;
+  }
+}
+@mixin underTablet {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
