@@ -1,6 +1,6 @@
 # Calculator App
 
-**Project Progress : ![70%](https://progress-bar.dev/70/?title=done)**
+**Project Progress : ![75%](https://progress-bar.dev/75/?title=done)**
 
 <!-- **[See Application Live]()** -->
 
