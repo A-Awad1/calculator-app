@@ -23,6 +23,9 @@ section.keys {
     }
     position: relative;
     overflow: hidden;
+    &:active {
+      transform: scale(0.9);
+    }
     &.delete::before {
       content: "del";
       @include underLargeMobile {

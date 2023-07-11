@@ -97,8 +97,8 @@ optgroup {
 button {
   border: none;
   cursor: pointer;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
+  -webkit-transition: background-color transform 0.3s;
+  transition: background-color transform 0.3s;
 }
 
 body {
@@ -202,9 +202,10 @@ header > div .theme-control button {
   height: 11px;
   width: 11px;
   border-radius: 50%;
-  background-color: var(--third-key-bg-color);
   position: relative;
   counter-increment: theme;
+  background-color: var(--third-key-bg-color);
+  cursor: default;
 }
 header > div .theme-control button:hover {
   background-color: var(--third-key-hover-color);
@@ -216,6 +217,11 @@ header > div .theme-control button::before {
   top: -7px;
   -webkit-transform: translate(-50%, -100%);
           transform: translate(-50%, -100%);
+  visibility: visible;
+  cursor: pointer;
+}
+header > div .theme-control button:not(.active) {
+  visibility: hidden;
 }
 
 section.keypad {
@@ -267,6 +273,10 @@ section.keys button:hover {
     padding: 3px;
     min-width: 30px;
   }
+}
+section.keys button:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
 }
 section.keys button.delete::before {
   content: "del";

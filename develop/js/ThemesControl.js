@@ -1,4 +1,3 @@
-
 let theme = localStorage.theme || 1;
 document.documentElement.dataset.theme = theme;
 let activeThemeButton = document.querySelector(`button[data-theme='${theme}']`);

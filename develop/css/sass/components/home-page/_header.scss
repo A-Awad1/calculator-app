@@ -27,18 +27,24 @@ header {
         height: 11px;
         width: 11px;
         border-radius: 50%;
+        position: relative;
+        counter-increment: theme;
         background-color: var(--third-key-bg-color);
+        cursor: default;
         &:hover {
           background-color: var(--third-key-hover-color);
         }
-        position: relative;
-        counter-increment: theme;
         &::before {
           content: counter(theme);
           position: absolute;
           left: 50%;
           top: -7px;
           transform: translate(-50%, -100%);
+          visibility: visible;
+          cursor: pointer;
+        }
+        &:not(.active) {
+          visibility: hidden;
         }
       }
     }
