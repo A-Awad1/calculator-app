@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="this is a web project">
-    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
     <title>Calculator App</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +22,7 @@
           </div>
         </div>
       </header>
-      <section class="keypad">399,981</section>
+      <section class="keypad"></section>
       <section class="keys">
         <div class="natural-numbers">
           <button data-value="9">9</button>
@@ -37,14 +36,14 @@
           <button data-value="1">1</button>
         </div>
         <button class="delete btn-text"></button>
-        <button class="plus">+</button>
-        <button class="minus">-</button>
+        <button class="plus" data-operator="+">+</button>
+        <button class="minus" data-operator="-">-</button>
         <button class="reset btn-text">reset</button>
         <button class="equal">=</button>
-        <button class="dot">.</button>
-        <button class="zero">0</button>
-        <button class="division">/</button>
-        <button class="multiply">x</button>
+        <button class="dot" data-value=".">.</button>
+        <button class="zero" data-value="0">0</button>
+        <button class="division" data-operator="/">/</button>
+        <button class="multiply" data-operator="*">x</button>
       </section>
     </main>
     <script src="js/main.js"></script>

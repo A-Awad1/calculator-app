@@ -167,6 +167,10 @@ header {
       -ms-flex-align: center;
           align-items: center;
   color: var(--header-text-color);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 header h1 {
   font-size: 24px;
@@ -225,17 +229,28 @@ header > div .theme-control button:not(.active) {
 }
 
 section.keypad {
+  height: 100px;
+  padding: 0 25px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   background-color: var(--second-bg-color);
   color: var(--header-text-color);
-  padding: 30px 25px;
   border-radius: 6px;
   font-size: 40px;
   margin: 25px 0 20px;
-  text-align: end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 @media (max-width: 375px) {
   section.keypad {
-    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 

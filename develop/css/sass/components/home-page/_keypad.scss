@@ -1,12 +1,15 @@
 section.keypad {
+  height: 100px;
+  padding: 0 25px;
+  align-items: center;
+  justify-content: flex-end;
   background-color: var(--second-bg-color);
   color: var(--header-text-color);
-  padding: 30px 25px;
   border-radius: $main-border-radius;
   font-size: 40px;
   margin: 25px 0 20px;
-  text-align: end;
+  display: flex;
   @include underLargeMobile {
-    text-align: center;
+    justify-content: center;
   }
 }
