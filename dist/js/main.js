@@ -46,6 +46,19 @@ operatorsKeys.forEach(
   (e) =>
     (e.onclick = () => {
       displayResult();
+      if (e.dataset.operator === "-") {
+        if (
+          payload === "" &&
+          digit1 === null &&
+          digit2 === null &&
+          operator === null &&
+          result === null
+        ) {
+          payload = "-";
+          keypad.textContent = "-";
+          return false;
+        }
+      }
       if (payload !== "" && !result) {
         digit1 = payload;
         payload = "";
