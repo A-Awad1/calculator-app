@@ -1,4 +1,3 @@
-
 let keypad = document.querySelector(".keypad"),
   valuesKeys = document.querySelectorAll("button[data-value]"),
   operatorsKeys = document.querySelectorAll("button[data-operator]"),
@@ -46,6 +45,7 @@ valuesKeys.forEach(
 operatorsKeys.forEach(
   (e) =>
     (e.onclick = () => {
+      displayResult();
       if (payload !== "" && !result) {
         digit1 = payload;
         payload = "";
