@@ -6,7 +6,7 @@ section.keypad {
   background-color: var(--second-bg-color);
   color: var(--header-text-color);
   border-radius: $main-border-radius;
-  font-size: 40px;
+  font-size: 5vmin;
   margin: 25px 0 20px;
   display: flex;
   @include underLargeMobile {

@@ -240,7 +240,7 @@ section.keypad {
   background-color: var(--second-bg-color);
   color: var(--header-text-color);
   border-radius: 6px;
-  font-size: 40px;
+  font-size: 5vmin;
   margin: 25px 0 20px;
   display: -webkit-box;
   display: -ms-flexbox;
