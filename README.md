@@ -1,6 +1,6 @@
 # Calculator App
 
-<!-- **[See Application Live]()** -->
+**[See Application Live](https://calculator-app-a-awad.netlify.app/)**
 
 This project is a challenge from [Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29).
 
@@ -19,7 +19,7 @@ This project is a challenge from [Frontend Mentor](https://www.frontendmentor.io
 - Gulp
 - Jest (in progress)
 
-<!-- **[See Application Live]()** -->
+**[See Application Live](https://calculator-app-a-awad.netlify.app/)**
 
 ## Run Project
 
@@ -37,6 +37,6 @@ Medium Screen - theme 2:
 
 ![Output](/Output-design-screenshots/2.png)
 
-small Screen - theme 3:
+Small Screen - theme 3:
 
 ![Output](/Output-design-screenshots/3.png)
