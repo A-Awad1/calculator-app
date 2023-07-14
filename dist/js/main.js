@@ -63,11 +63,11 @@ operatorsKeys.forEach(
           return false;
         }
       }
-      if (payload !== "" && !result) {
+      if (payload !== "" && result === null) {
         digit1 = payload;
         payload = "";
       }
-      if (payload === "" && result) {
+      if (payload === "" && result !== null) {
         digit1 = result;
         result = "";
       }
@@ -76,9 +76,7 @@ operatorsKeys.forEach(
       }
     })
 );
-equalButton.onclick = () => {
-  displayResult();
-};
+equalButton.onclick = () => displayResult();
 delButton.onclick = () => {
   +payload === 0 ? (payload = 0) : null;
   payload = payload.toString().slice(0, -1);

@@ -1,7 +1,5 @@
 # Calculator App
 
-**Project Progress : ![90%](https://progress-bar.dev/90/?title=done)**
-
 <!-- **[See Application Live]()** -->
 
 This project is a challenge from [Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29).
@@ -19,7 +17,7 @@ This project is a challenge from [Frontend Mentor](https://www.frontendmentor.io
 - SCSS
 - JavaScript (ECMAScript , DOM , BOM)
 - Gulp
-- Jest
+- Jest (in progress)
 
 <!-- **[See Application Live]()** -->
 
@@ -29,22 +27,16 @@ This project is a challenge from [Frontend Mentor](https://www.frontendmentor.io
 
 Open dist/index.html
 
-<!--
 ## Output design Screenshots:
 
-Large Screen - Light Mode - English:
+Large Screen - theme 1:
 
 ![Output](/Output-design-screenshots/1.png)
 
-Mobile Screen - Dark Mode - English:
+Medium Screen - theme 2:
 
 ![Output](/Output-design-screenshots/2.png)
 
-Mobile Screen - Dark Mode - Arabic:
+small Screen - theme 3:
 
 ![Output](/Output-design-screenshots/3.png)
-
-Mobile Screen update Popup - Light Mode - Arabic:
-
-![Output](/Output-design-screenshots/4.png)
--->
