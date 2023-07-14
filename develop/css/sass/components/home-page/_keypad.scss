@@ -6,10 +6,15 @@ section.keypad {
   background-color: var(--second-bg-color);
   color: var(--header-text-color);
   border-radius: $main-border-radius;
-  font-size: 5vmin;
   margin: 25px 0 20px;
   display: flex;
+  font-size: 30px;
+  @include underTablet {
+    font-size: 27px;
+  }
   @include underLargeMobile {
     justify-content: center;
+    height: 60px;
+    font-size: 7vmin;
   }
 }

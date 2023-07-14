@@ -12,6 +12,11 @@ let keypad = document.querySelector(".keypad"),
 
 keypad.textContent = 0;
 
+function keypadValue(number) {
+  let formattedResult =
+    number > +"9".repeat(15) ? number.toPrecision(1) : number.toLocaleString();
+  keypad.textContent = formattedResult;
+}
 function displayResult() {
   if (digit1 !== null && payload !== "") {
     digit2 = payload;
@@ -19,8 +24,7 @@ function displayResult() {
   }
   if (digit1 !== null && digit2 !== null && operator !== null) {
     result = eval(`${digit1} ${operator} ${digit2}`);
-    Math.trunc(result) !== result ? (result = result.toFixed(2)) : null;
-    keypad.textContent = result.toLocaleString();
+    keypadValue(result);
     digit1 = null;
     digit2 = null;
     operator = null;
@@ -39,7 +43,7 @@ valuesKeys.forEach(
         }
       }
       payload += e.dataset.value;
-      keypad.textContent = (+payload).toLocaleString();
+      keypadValue(+payload);
     })
 );
 operatorsKeys.forEach(
@@ -79,8 +83,7 @@ delButton.onclick = () => {
   +payload === 0 ? (payload = 0) : null;
   payload = payload.toString().slice(0, -1);
   payload = payload === "" ? "" : +payload;
-  keypad.textContent = (+payload).toLocaleString();
-  console.log(payload);
+  keypadValue(+payload);
 };
 resetButton.onclick = () => {
   digit1 = null;

@@ -240,17 +240,24 @@ section.keypad {
   background-color: var(--second-bg-color);
   color: var(--header-text-color);
   border-radius: 6px;
-  font-size: 5vmin;
   margin: 25px 0 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  font-size: 30px;
+}
+@media (max-width: 768px) {
+  section.keypad {
+    font-size: 27px;
+  }
 }
 @media (max-width: 375px) {
   section.keypad {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    height: 60px;
+    font-size: 7vmin;
   }
 }
 
