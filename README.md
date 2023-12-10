@@ -1,4 +1,4 @@
-# Calculator App
+# Calculator App [Vanilla JavaScript]
 
 **[See Application Live](https://calculator-app-a-awad.netlify.app/)**
 
