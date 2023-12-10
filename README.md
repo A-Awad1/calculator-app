@@ -1,6 +1,8 @@
-# Calculator App [Vanilla JavaScript]
+# Calculator App [vue.js]
 
-**[See Application Live](https://calculator-app-a-awad.netlify.app/)**
+**Project Progress : ![0%](https://progress-bar.dev/0/?title=done)**
+
+<!-- **[See Website Live]()** -->
 
 This project is a challenge from [Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29).
 
@@ -13,20 +15,35 @@ This project is a challenge from [Frontend Mentor](https://www.frontendmentor.io
 
 ## Technologies Used:
 
-- Pug
+- Vue 3
+- Vuex
 - SCSS
-- JavaScript (ECMAScript , DOM , BOM)
-- Gulp
+- JavaScript (ECMAScript , BOM)
 - Jest (in progress)
 
-**[See Application Live](https://calculator-app-a-awad.netlify.app/)**
+<!-- **[See Website Live]()** -->
 
 ## Run Project
 
-###
+### installs dependencies
 
-Open dist/index.html
+```
+npm install
+```
 
+### Compiles and hot-reloads for development
+
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+
+```
+npm run build
+```
+
+<!--
 ## Output design Screenshots:
 
 Large Screen - theme 1:
@@ -40,3 +57,4 @@ Medium Screen - theme 2:
 Small Screen - theme 3:
 
 ![Output](/Output-design-screenshots/3.png)
+-->
