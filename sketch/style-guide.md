@@ -7,6 +7,17 @@ The designs were created to the following widths:
 - Mobile: 375px
 - Desktop: 1440px
 
+## Typography
+
+### Body Copy
+
+- Font size (numbers): 32px
+
+### Font
+
+- Family: [League Spartan](https://fonts.google.com/specimen/League+Spartan)
+- Weights: 700
+
 ## Colors
 
 ### Theme 1
@@ -80,14 +91,3 @@ The designs were created to the following widths:
 - Light yellow: hsl(52, 100%, 62%)
 - Very dark blue: hsl(198, 20%, 13%)
 - White (text): hsl(0, 0%, 100%)
-
-## Typography
-
-### Body Copy
-
-- Font size (numbers): 32px
-
-### Font
-
-- Family: [League Spartan](https://fonts.google.com/specimen/League+Spartan)
-- Weights: 700

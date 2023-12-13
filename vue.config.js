@@ -5,7 +5,10 @@ module.exports = defineConfig({
     sourceMap: true,
     loaderOptions: {
       scss: {
-        additionalData: `@import "~@/scss/main.scss";`,
+        additionalData: `
+        @use "~@/scss/DividedFiles/helpers/variables/colors";
+        @use "~@/scss/DividedFiles/helpers" as *;
+        `,
       },
     },
   },

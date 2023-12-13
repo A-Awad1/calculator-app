@@ -1,14 +1,3 @@
-// helpers
-// -variables
-@use "DividedFiles/helpers/variables/colors" as colors;
-@import "DividedFiles/helpers/variables/global";
-// -mixins
-@import "DividedFiles/helpers/mixins/global";
-@import "DividedFiles/helpers/mixins/responsive";
-// -functions
-@import "DividedFiles/helpers/functions";
-// -placeholders
-@import "DividedFiles/helpers/placeholders";
 // layout
 @import "DividedFiles/layout/global-rules";
 @import "DividedFiles/layout/grid";
