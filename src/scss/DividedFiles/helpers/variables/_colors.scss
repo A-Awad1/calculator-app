@@ -1,8 +1,8 @@
 // Theme 1
 $theme: 1;
 // - Text
-$main-text: hsl(221, 14%, 31%); // Very dark grayish blue
-$second-text: hsl(0, 0%, 100%); // White
+$main-text: hsl(0, 0%, 100%); // White
+$second-text: hsl(221, 14%, 31%); // Very dark grayish blue
 $third-text: hsl(0, 0%, 100%); // White
 // - Backgrounds
 $page-background: hsl(222, 26%, 31%); // Very dark desaturated blue
@@ -18,8 +18,8 @@ $key-third-shadow: hsl(6, 70%, 34%); // Dark red
 @if ($theme == 2) {
   // Theme 2
   // - Text
-  $main-text: hsl(60, 10%, 19%); // Very dark grayish yellow
-  $second-text: hsl(0, 0%, 100%); // White;
+  $main-text: hsl(0, 0%, 100%); // White;
+  $second-text: hsl(60, 10%, 19%); // Very dark grayish yellow
   $third-text: hsl(0, 0%, 100%); // White;
   // - Backgrounds
   $page-background: hsl(0, 0%, 90%); // Light gray
@@ -36,8 +36,8 @@ $key-third-shadow: hsl(6, 70%, 34%); // Dark red
 @if ($theme == 3) {
   // Theme 3
   // - Text
-  $main-text: hsl(52, 100%, 62%); // Light yellow
-  $second-text: hsl(0, 0%, 100%); // White
+  $main-text: hsl(0, 0%, 100%); // White
+  $second-text: hsl(52, 100%, 62%); // Light yellow
   $third-text: hsl(198, 20%, 13%); // Very dark blue
   // - Backgrounds
   $page-background: hsl(268, 75%, 9%); // Very dark violet
