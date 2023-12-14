@@ -10,7 +10,8 @@ body {
     size: 32px;
     weight: 700;
   }
-  // background-color: colors.$main-background;
+  color: colors.$main-text;
+  background-color: colors.$page-background;
 }
 #app {
 }
