@@ -1,9 +1,53 @@
-// text
-$main-text: #171c26;
-$second-text: #464f60;
-$third-text: #687182;
-
-// background
-$main-background: #ffffff;
-$second-background: #f9fafc;
-$third-background: #2264e53d;
+// Theme 1
+$theme: 1;
+// - Text
+$main-text: hsl(221, 14%, 31%); // Very dark grayish blue
+$second-text: hsl(0, 0%, 100%); // White
+$third-text: hsl(0, 0%, 100%); // White
+// - Backgrounds
+$page-background: hsl(222, 26%, 31%); // Very dark desaturated blue
+$keypad-background: hsl(223, 31%, 20%); // Very dark desaturated blue
+$screen-background: hsl(224, 36%, 15%); // Very dark desaturated blue
+// - Keys
+$key-main-background: hsl(30, 25%, 89%); // Light grayish orange
+$key-main-shadow: hsl(28, 16%, 65%); // Grayish orange
+$key-second-background: hsl(225, 21%, 49%); // Desaturated dark blue
+$key-second-shadow: hsl(224, 28%, 35%); // Desaturated dark blue
+$key-third-background: hsl(6, 63%, 50%); // Red
+$key-third-shadow: hsl(6, 70%, 34%); // Dark red
+@if ($theme == 2) {
+  // Theme 2
+  // - Text
+  $main-text: hsl(60, 10%, 19%); // Very dark grayish yellow
+  $second-text: hsl(0, 0%, 100%); // White;
+  $third-text: hsl(0, 0%, 100%); // White;
+  // - Backgrounds
+  $page-background: hsl(0, 0%, 90%); // Light gray
+  $keypad-background: hsl(0, 5%, 81%); // Grayish red
+  $screen-background: hsl(0, 0%, 93%); // Very light gray
+  // - Keys
+  $key-main-background: hsl(45, 7%, 89%); // Light grayish yellow
+  $key-main-shadow: hsl(35, 11%, 61%); // Dark grayish orange
+  $key-second-background: hsl(185, 42%, 37%); // Dark moderate cyan
+  $key-second-shadow: hsl(185, 58%, 25%); // Very dark cyan
+  $key-third-background: hsl(25, 98%, 40%); // Orange
+  $key-third-shadow: hsl(25, 99%, 27%); // Dark orange
+}
+@if ($theme == 3) {
+  // Theme 3
+  // - Text
+  $main-text: hsl(52, 100%, 62%); // Light yellow
+  $second-text: hsl(0, 0%, 100%); // White
+  $third-text: hsl(198, 20%, 13%); // Very dark blue
+  // - Backgrounds
+  $page-background: hsl(268, 75%, 9%); // Very dark violet
+  $keypad-background: hsl(268, 71%, 12%); // Very dark violet
+  $screen-background: hsl(268, 71%, 12%); // Very dark violet
+  // - Keys
+  $key-main-background: hsl(268, 47%, 21%); // Very dark violet
+  $key-main-shadow: hsl(290, 70%, 36%); // Dark magenta
+  $key-second-background: hsl(281, 89%, 26%); // Dark violet
+  $key-second-shadow: hsl(285, 91%, 52%); // Vivid magenta
+  $key-third-background: hsl(176, 100%, 44%); // Pure cyan
+  $key-third-shadow: hsl(177, 92%, 70%); // Soft cyan
+}
