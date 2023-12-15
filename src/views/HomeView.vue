@@ -1,43 +1,28 @@
 <template>
-  <div class="container">
-    <main>
-      <calc-header></calc-header>
-      <calc-screen>399,981</calc-screen>
-      <section class="keypad"></section>
-    </main>
-  </div>
+  <main>
+    <calc-header></calc-header>
+    <calc-screen>399,981</calc-screen>
+    <calc-keypad></calc-keypad>
+  </main>
 </template>
 
 <script>
 import CalcHeader from "@/components/CalcHeader.vue";
 import CalcScreen from "@/components/CalcScreen.vue";
+import CalcKeypad from "@/components/CalcKeypad.vue";
 export default {
   name: "HomeView",
   components: {
     CalcHeader,
     CalcScreen,
+    CalcKeypad,
   },
 };
 </script>
 
 <style lang="scss">
-.container {
-  border: 1px solid red;
-  min-height: 100vh;
-  position: relative;
-  main {
-    border: 1px solid blue;
-    padding: $main-padding;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    top: 20%; // temp.
-    width: fit-content;
-
-    section.keypad {
-      background-color: colors.$keypad-background;
-    }
-  }
+main {
+  min-width: 300px;
+  padding: 10px;
 }
 </style>

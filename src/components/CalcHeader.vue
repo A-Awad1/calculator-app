@@ -5,10 +5,10 @@
       <span>theme</span>
       <div class="themes-buttons">
         <button
-          v-for="(themeButton, index) in 3"
-          :key="index"
-          @click="theme = index + 1"
-          :class="{ selected: theme === index + 1 }"
+          v-for="themeButton in 3"
+          :key="themeButton"
+          @click="theme = +themeButton"
+          :class="{ selected: theme === +themeButton }"
         ></button>
       </div>
     </div>
@@ -57,11 +57,9 @@ header {
           width: 14px;
           aspect-ratio: 1/1;
           border-radius: 50%;
-          border: none;
           background-color: colors.$key-third-background;
           position: relative;
           counter-increment: button-num;
-          cursor: pointer;
           &:not(.selected) {
             visibility: hidden;
           }
