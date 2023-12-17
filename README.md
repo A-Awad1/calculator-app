@@ -1,6 +1,6 @@
 # Calculator App [vue.js]
 
-**Project Progress : ![25%](https://progress-bar.dev/25/?title=done)**
+**Project Progress : ![50%](https://progress-bar.dev/50/?title=done)**
 
 <!-- **[See Website Live]()** -->
 
