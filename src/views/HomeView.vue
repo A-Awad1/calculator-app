@@ -22,7 +22,9 @@ export default {
 
 <style lang="scss">
 main {
-  min-width: 300px;
   padding: 10px;
+  @include underLargeMobile {
+    width: 100%;
+  }
 }
 </style>

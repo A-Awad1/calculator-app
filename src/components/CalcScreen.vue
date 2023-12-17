@@ -15,5 +15,6 @@ section.screen {
   padding: 28px 25px;
   text-align: end;
   font-size: 42px;
+  user-select: none;
 }
 </style>

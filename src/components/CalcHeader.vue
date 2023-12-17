@@ -28,7 +28,7 @@ export default {
 
 <style lang="scss">
 header {
-  *:not(button) {
+  * {
     user-select: none;
   }
   display: flex;
