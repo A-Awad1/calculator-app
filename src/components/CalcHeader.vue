@@ -85,6 +85,9 @@ header {
               top: -18px;
             }
           }
+          &:active {
+            filter: contrast(1.25) brightness(1.7);
+          }
         }
       }
     }

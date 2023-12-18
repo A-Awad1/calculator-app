@@ -63,7 +63,7 @@ section.keypad {
     padding-top: 8px;
     font-weight: inherit;
     border-radius: $main-border-radius;
-    color: colors.$second-text;
+    color: colors.$key-main-text;
     background-color: colors.$key-main-background;
     user-select: none;
     z-index: 1;
@@ -90,7 +90,7 @@ section.keypad {
       grid-column: span 2;
     }
     &.second-button {
-      color: colors.$main-text;
+      color: colors.$key-second-text;
       background-color: colors.$key-second-background;
       text-transform: uppercase;
       padding-top: 4px;
@@ -103,7 +103,7 @@ section.keypad {
       }
     }
     &.equal {
-      color: colors.$main-text;
+      color: colors.$key-third-text;
       background-color: colors.$key-third-background;
       padding-top: 4px;
       font-size: 24px;
