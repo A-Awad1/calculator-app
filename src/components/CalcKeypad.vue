@@ -39,11 +39,12 @@ section.keypad {
     grid-area: 1/1/4/4;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    direction: rtl;
+    justify-items: end;
     gap: 20px;
     @include underLargeMobile {
       gap: 0.5em;
     }
-    direction: rtl;
   }
   button {
     &:not(.equal, .reset) {
@@ -55,6 +56,7 @@ section.keypad {
       }
       @include underLargeMobile {
         height: auto;
+        max-height: 60px;
         min-height: 40px;
       }
     }
