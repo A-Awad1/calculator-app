@@ -2,6 +2,7 @@
   <main>
     <calc-header></calc-header>
     <calc-screen>399,981</calc-screen>
+    <!-- <calc-screen>11111111111111119999999999999999111</calc-screen> -->
     <calc-keypad></calc-keypad>
   </main>
 </template>

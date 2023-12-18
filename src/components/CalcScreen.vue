@@ -1,5 +1,11 @@
 <template>
-  <section class="screen"><slot></slot></section>
+  <section class="screen">
+    <div>
+      <p>
+        <slot></slot>
+      </p>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -8,16 +14,30 @@ export default {};
 
 <style lang="scss">
 section.screen {
+  margin: 25px 0 20px;
+  padding: $main-padding;
   background-color: colors.$screen-background;
-  width: 100%;
   border-radius: $second-border-radius;
-  margin: 20px 0 10px;
-  padding: 28px 25px;
-  text-align: end;
   user-select: none;
+  direction: rtl;
   font-size: 42px;
   @include underLargeMobile {
     font-size: 30px;
+  }
+  div {
+    overflow-x: auto;
+    // Hide scrollbar
+    // - Chrome, Safari and Opera
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    // - IE and Edge
+    -ms-overflow-style: none;
+    // - Firefox
+    scrollbar-width: none;
+    p {
+      width: 0;
+    }
   }
 }
 </style>
