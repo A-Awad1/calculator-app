@@ -19,6 +19,9 @@ body {
     size: 32px;
     weight: 700;
   }
+  @include underLargeMobile {
+    font-size: 25px;
+  }
   color: colors.$main-text;
   background-color: colors.$page-background;
 }

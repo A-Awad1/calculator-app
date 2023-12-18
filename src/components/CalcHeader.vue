@@ -38,14 +38,20 @@ header {
   > {
     h1 {
       font-size: 25px;
+      @include underLargeMobile {
+        font-size: 22px;
+      }
     }
     .themes-control {
       @extend %center-flex;
       gap: 20px;
       span {
-        font-size: 10px;
         letter-spacing: 0.8px;
         text-transform: uppercase;
+        font-size: 10px;
+        @include underLargeMobile {
+          font-size: 9px;
+        }
       }
       .themes-buttons {
         display: flex;
@@ -73,6 +79,10 @@ header {
             font: {
               size: 12px;
               weight: 700;
+            }
+            @include underLargeMobile {
+              font-size: 11px;
+              top: -18px;
             }
           }
         }

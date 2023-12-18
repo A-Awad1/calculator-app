@@ -14,7 +14,10 @@ section.screen {
   margin: 20px 0 10px;
   padding: 28px 25px;
   text-align: end;
-  font-size: 42px;
   user-select: none;
+  font-size: 42px;
+  @include underLargeMobile {
+    font-size: 30px;
+  }
 }
 </style>

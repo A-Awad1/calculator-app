@@ -35,15 +35,15 @@ section.keypad {
   @include underLargeMobile {
     gap: 0.5em;
   }
-  .counting-numbers {
+  div.counting-numbers {
     grid-area: 1/1/4/4;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    direction: rtl;
     gap: 20px;
     @include underLargeMobile {
       gap: 0.5em;
     }
+    direction: rtl;
   }
   button {
     &:not(.equal, .reset) {
@@ -59,7 +59,7 @@ section.keypad {
       }
     }
     padding-top: 8px;
-    font-weight: 700;
+    font-weight: inherit;
     border-radius: $main-border-radius;
     color: colors.$second-text;
     background-color: colors.$key-main-background;
@@ -91,8 +91,11 @@ section.keypad {
       color: colors.$main-text;
       background-color: colors.$key-second-background;
       text-transform: uppercase;
-      font-size: 20px;
       padding-top: 4px;
+      font-size: 20px;
+      @include underLargeMobile {
+        font-size: 16px;
+      }
       &::after {
         box-shadow: 0 3px 0 0 colors.$key-second-shadow;
       }
@@ -100,8 +103,11 @@ section.keypad {
     &.equal {
       color: colors.$main-text;
       background-color: colors.$key-third-background;
-      font-size: 24px;
       padding-top: 4px;
+      font-size: 24px;
+      @include underLargeMobile {
+        font-size: 16px;
+      }
       &::after {
         box-shadow: 0 3px 0 0 colors.$key-third-shadow;
       }
