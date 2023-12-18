@@ -16,7 +16,7 @@ export default {};
 section.screen {
   margin: 25px 0 20px;
   padding: $main-padding;
-  background-color: colors.$screen-background;
+  background-color: var(--screen-background-color);
   border-radius: $second-border-radius;
   user-select: none;
   direction: rtl;

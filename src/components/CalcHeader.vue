@@ -20,8 +20,17 @@ export default {
   name: "CalcHeader",
   data: function () {
     return {
-      theme: 1,
+      theme: +localStorage.theme || 1,
     };
+  },
+  watch: {
+    theme: {
+      handler: function (v) {
+        document.documentElement.setAttribute("theme", v);
+        localStorage.theme = v;
+      },
+      immediate: true,
+    },
   },
 };
 </script>
@@ -58,12 +67,12 @@ header {
         gap: 4px;
         padding: 4px;
         border-radius: 10px;
-        background-color: colors.$keypad-background;
+        background-color: var(--keypad-background-color);
         button {
           width: 14px;
           aspect-ratio: 1/1;
           border-radius: 50%;
-          background-color: colors.$key-third-background;
+          background-color: var(--key-third-background-color);
           position: relative;
           counter-increment: button-num;
           &:not(.selected) {

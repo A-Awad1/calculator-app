@@ -23,8 +23,8 @@ body {
   @include underLargeMobile {
     font-size: 25px;
   }
-  color: colors.$main-text;
-  background-color: colors.$page-background;
+  color: var(--main-text-color);
+  background-color: var(--page-background-color);
 }
 #app {
   @extend %center-flex;

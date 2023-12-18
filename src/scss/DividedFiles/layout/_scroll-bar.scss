@@ -7,13 +7,13 @@ $scroll: "::-webkit-scrollbar";
   width: 15px;
 }
 #{$scroll}-track {
-  background-color: colors.$main-text;
+  background-color: var(--main-text-color);
 }
 #{$scroll}-thumb {
   cursor: pointer;
   border-radius: $main-border-radius;
   &,
   &:hover {
-    background-color: colors.$page-background;
+    background-color: var(--page-background-color);
   }
 }

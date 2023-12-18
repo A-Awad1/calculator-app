@@ -25,7 +25,7 @@ export default {};
 
 <style lang="scss">
 section.keypad {
-  background-color: colors.$keypad-background;
+  background-color: var(--keypad-background-color);
   padding: $main-padding;
   border-radius: $second-border-radius;
   display: grid;
@@ -63,8 +63,8 @@ section.keypad {
     padding-top: 8px;
     font-weight: inherit;
     border-radius: $main-border-radius;
-    color: colors.$key-main-text;
-    background-color: colors.$key-main-background;
+    color: var(--key-main-text-color);
+    background-color: var(--key-main-background-color);
     user-select: none;
     z-index: 1;
     position: relative;
@@ -77,7 +77,7 @@ section.keypad {
       top: 0;
       border-radius: inherit;
       z-index: -1;
-      box-shadow: 0 3px 0 0 colors.$key-main-shadow;
+      box-shadow: 0 3px 0 0 var(--key-main-shadow-color);
     }
     &:active {
       filter: contrast(1.25) brightness(1.7);
@@ -90,8 +90,8 @@ section.keypad {
       grid-column: span 2;
     }
     &.second-button {
-      color: colors.$key-second-text;
-      background-color: colors.$key-second-background;
+      color: var(--key-second-text-color);
+      background-color: var(--key-second-background-color);
       text-transform: uppercase;
       padding-top: 4px;
       font-size: 20px;
@@ -99,19 +99,19 @@ section.keypad {
         font-size: 16px;
       }
       &::after {
-        box-shadow: 0 3px 0 0 colors.$key-second-shadow;
+        box-shadow: 0 3px 0 0 var(--key-second-shadow-color);
       }
     }
     &.equal {
-      color: colors.$key-third-text;
-      background-color: colors.$key-third-background;
+      color: var(--key-third-text-color);
+      background-color: var(--key-third-background-color);
       padding-top: 4px;
       font-size: 24px;
       @include underLargeMobile {
         font-size: 16px;
       }
       &::after {
-        box-shadow: 0 3px 0 0 colors.$key-third-shadow;
+        box-shadow: 0 3px 0 0 var(--key-third-shadow-color);
       }
     }
   }
