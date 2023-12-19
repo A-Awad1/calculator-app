@@ -40,7 +40,7 @@
 export default {
   data: function () {
     return {
-      screenReader: 0,
+      screenReading: 0,
       num1: 0,
       num2: "",
       operator: "",
@@ -65,7 +65,7 @@ export default {
           this.num1.toString() === "0" ? (this.num1 = "") : null;
         }
         this.num1 += inputNum.toString();
-        this.screenReader = this.num1;
+        this.screenReading = this.num1;
         this.delEnabled = true;
       } else {
         if (this.num2 === "" && inputNum === ".") {
@@ -75,7 +75,7 @@ export default {
           this.num2.toString() === "0" ? (this.num2 = "") : null;
         }
         this.num2 += inputNum.toString();
-        this.screenReader = this.num2;
+        this.screenReading = this.num2;
         this.delEnabled = true;
       }
     },
@@ -100,7 +100,7 @@ export default {
           this.result = +this.num1 / +secondNum;
           break;
       }
-      this.screenReader = this.result;
+      this.screenReading = this.result;
       this.num1 = this.result;
       if (this.num2 !== "" && this.operator !== "") {
         this.cashNum = this.num2;
@@ -127,18 +127,18 @@ export default {
       }
     },
     del: function () {
-      if (this.screenReader === this.num1 && this.operator === "") {
+      if (this.screenReading === this.num1 && this.operator === "") {
         this.num1 = this.num1.toString().slice(0, -1);
         this.num1.toString() === "" ? (this.num1 = 0) : null;
-        this.screenReader = this.num1;
-      } else if (this.screenReader === this.num2) {
+        this.screenReading = this.num1;
+      } else if (this.screenReading === this.num2) {
         this.num2 = this.num2.toString().slice(0, -1);
         this.num2.toString() === "" ? (this.num2 = 0) : null;
-        this.screenReader = this.num2;
+        this.screenReading = this.num2;
       }
     },
     reset: function () {
-      this.screenReader = 0;
+      this.screenReading = 0;
       this.num1 = 0;
       this.num2 = "";
       this.operator = "";
@@ -149,7 +149,7 @@ export default {
     },
   },
   watch: {
-    screenReader: function (v) {
+    screenReading: function (v) {
       this.dotEnabled = !v.toString().includes(".");
       this.$emit("sendValue", v);
     },
