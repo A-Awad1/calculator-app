@@ -5,22 +5,119 @@
         v-for="numButton in 9"
         :key="numButton"
         v-text="10 - numButton"
+        @click="updateInput"
       ></button>
     </div>
-    <button class="second-button">del</button>
-    <button>+</button>
-    <button>-</button>
-    <button>.</button>
-    <button>0</button>
-    <button>/</button>
-    <button>x</button>
-    <button class="second-button reset">reset</button>
-    <button class="equal">=</button>
+    <button v-text="'del'" class="second-button"></button>
+    <button v-text="'+'" @click="updateOperator"></button>
+    <button v-text="'-'" @click="updateOperator"></button>
+    <button
+      v-text="'.'"
+      @click="
+        updateInput($event);
+        dot = false;
+      "
+      :disabled="!dot"
+    ></button>
+    <button v-text="'0'" @click="updateInput"></button>
+    <button v-text="'/'" @click="updateOperator"></button>
+    <button v-text="'x'" @click="updateOperator"></button>
+    <button v-text="'reset'" class="second-button reset"></button>
+    <button v-text="'='" class="equal" @click="equalProcess"></button>
   </section>
 </template>
 
 <script>
-export default {};
+export default {
+  data: function () {
+    return {
+      screenReader: 0,
+      num1: 0,
+      num2: "",
+      operator: "",
+      result: "",
+      cashNum: "",
+      cashOperator: "",
+      dot: true,
+    };
+  },
+  methods: {
+    updateInput: function (event) {
+      const inputNum = event.target.textContent;
+      if (this.operator === "") {
+        if (this.num1 === "" && inputNum === ".") {
+          this.num1 = 0;
+        }
+        if (inputNum !== ".") {
+          this.num1.toString() === "0" ? (this.num1 = "") : null;
+        }
+        this.num1 += inputNum.toString();
+        this.screenReader = this.num1;
+      } else {
+        if (this.num2 === "" && inputNum === ".") {
+          this.num2 = 0;
+        }
+        if (inputNum !== ".") {
+          this.num2.toString() === "0" ? (this.num2 = "") : null;
+        }
+        this.num2 += inputNum.toString();
+        this.screenReader = this.num2;
+      }
+    },
+    updateOperator: function (event) {
+      this.operatorProcess();
+      const operator = event.target.textContent;
+      this.operator = operator;
+    },
+    calculate: function (operator, secondNum) {
+      switch (operator) {
+        case "+":
+          this.result = +this.num1 + +secondNum;
+          break;
+        case "-":
+          this.result = +this.num1 - +secondNum;
+          break;
+        case "x":
+          this.result = +this.num1 * +secondNum;
+          break;
+        case "/":
+          this.result = +this.num1 / +secondNum;
+          break;
+      }
+      this.screenReader = this.result;
+      this.num1 = this.result;
+      if (this.num2 !== "" && this.operator !== "") {
+        this.cashNum = this.num2;
+        this.cashOperator = this.operator;
+        this.num2 = "";
+        this.operator = "";
+      }
+    },
+    equalProcess: function () {
+      if (this.num2 !== "") {
+        this.calculate(this.operator, this.num2);
+      } else if (
+        this.num2 === "" &&
+        this.cashNum !== "" &&
+        this.cashOperator !== ""
+      ) {
+        this.calculate(this.cashOperator, this.cashNum);
+      }
+    },
+    operatorProcess: function () {
+      if (this.num2 !== "") {
+        this.calculate(this.operator, this.num2);
+      }
+    },
+  },
+  watch: {
+    screenReader: function (v) {
+      this.dot = !v.toString().includes(".");
+      this.$emit("sendValue", v);
+    },
+  },
+  emits: ["sendValue"],
+};
 </script>
 
 <style lang="scss">

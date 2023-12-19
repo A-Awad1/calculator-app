@@ -1,8 +1,8 @@
 <template>
   <main>
     <calc-header></calc-header>
-    <calc-screen>399,981</calc-screen>
-    <calc-keypad></calc-keypad>
+    <calc-screen>{{ screenReading }}</calc-screen>
+    <calc-keypad @sendValue="updateValue"></calc-keypad>
   </main>
 </template>
 
@@ -12,6 +12,16 @@ import CalcScreen from "@/components/CalcScreen.vue";
 import CalcKeypad from "@/components/CalcKeypad.vue";
 export default {
   name: "HomeView",
+  data: function () {
+    return {
+      screenReading: 0,
+    };
+  },
+  methods: {
+    updateValue: function (v) {
+      this.screenReading = v;
+    },
+  },
   components: {
     CalcHeader,
     CalcScreen,

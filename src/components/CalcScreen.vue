@@ -2,7 +2,9 @@
   <section class="screen">
     <div>
       <p>
-        <slot></slot>
+        <bdi>
+          <slot></slot>
+        </bdi>
       </p>
     </div>
   </section>
@@ -20,9 +22,11 @@ section.screen {
   border-radius: $second-border-radius;
   user-select: none;
   direction: rtl;
+  height: 98px;
   font-size: 42px;
   @include underLargeMobile {
     font-size: 30px;
+    height: 85px;
   }
   div {
     overflow-x: auto;
