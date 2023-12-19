@@ -8,7 +8,7 @@
         @click="updateInput"
       ></button>
     </div>
-    <button v-text="'del'" class="second-button"></button>
+    <button v-text="'del'" class="second-button" @click="del"></button>
     <button v-text="'+'" @click="updateOperator"></button>
     <button v-text="'-'" @click="updateOperator"></button>
     <button
@@ -22,7 +22,11 @@
     <button v-text="'0'" @click="updateInput"></button>
     <button v-text="'/'" @click="updateOperator"></button>
     <button v-text="'x'" @click="updateOperator"></button>
-    <button v-text="'reset'" class="second-button reset"></button>
+    <button
+      v-text="'reset'"
+      class="second-button reset"
+      @click="reset"
+    ></button>
     <button v-text="'='" class="equal" @click="equalProcess"></button>
   </section>
 </template>
@@ -107,6 +111,26 @@ export default {
     operatorProcess: function () {
       if (this.num2 !== "") {
         this.calculate(this.operator, this.num2);
+      }
+    },
+    reset: function () {
+      this.screenReader = 0;
+      this.num1 = 0;
+      this.num2 = "";
+      this.operator = "";
+      this.result = "";
+      this.cashNum = "";
+      this.cashOperator = "";
+    },
+    del: function () {
+      if (this.screenReader === this.num1) {
+        this.num1 = this.num1.toString().slice(0, -1);
+        this.num1.toString() === "" ? (this.num1 = 0) : null;
+        this.screenReader = this.num1;
+      } else if (this.screenReader === this.num2) {
+        this.num2 = this.num2.toString().slice(0, -1);
+        this.num2.toString() === "" ? (this.num2 = 0) : null;
+        this.screenReader = this.num2;
       }
     },
   },
