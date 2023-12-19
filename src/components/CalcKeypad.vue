@@ -126,16 +126,6 @@ export default {
         this.calculate(this.operator, this.num2);
       }
     },
-    reset: function () {
-      this.screenReader = 0;
-      this.num1 = 0;
-      this.num2 = "";
-      this.operator = "";
-      this.result = "";
-      this.cashNum = "";
-      this.cashOperator = "";
-      this.delEnabled = false;
-    },
     del: function () {
       if (this.screenReader === this.num1 && this.operator === "") {
         this.num1 = this.num1.toString().slice(0, -1);
@@ -146,6 +136,16 @@ export default {
         this.num2.toString() === "" ? (this.num2 = 0) : null;
         this.screenReader = this.num2;
       }
+    },
+    reset: function () {
+      this.screenReader = 0;
+      this.num1 = 0;
+      this.num2 = "";
+      this.operator = "";
+      this.result = "";
+      this.cashNum = "";
+      this.cashOperator = "";
+      this.delEnabled = false;
     },
   },
   watch: {
