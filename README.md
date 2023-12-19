@@ -1,7 +1,5 @@
 # Calculator App [vue.js]
 
-**Project Progress : ![100%](https://progress-bar.dev/100/?title=done)**
-
 <!-- **[See Website Live]()** -->
 
 This project is a challenge from [Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29).
@@ -16,7 +14,6 @@ This project is a challenge from [Frontend Mentor](https://www.frontendmentor.io
 ## Technologies Used:
 
 - Vue 3
-- Vuex
 - SCSS
 - JavaScript (ECMAScript , BOM)
 - Jest (in progress)
