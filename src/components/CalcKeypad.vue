@@ -8,16 +8,21 @@
         @click="updateInput"
       ></button>
     </div>
-    <button v-text="'del'" class="second-button" @click="del"></button>
+    <button
+      v-text="'del'"
+      class="second-button"
+      @click="del"
+      :disabled="!delEnabled"
+    ></button>
     <button v-text="'+'" @click="updateOperator"></button>
     <button v-text="'-'" @click="updateOperator"></button>
     <button
       v-text="'.'"
       @click="
         updateInput($event);
-        dot = false;
+        dotEnabled = false;
       "
-      :disabled="!dot"
+      :disabled="!dotEnabled"
     ></button>
     <button v-text="'0'" @click="updateInput"></button>
     <button v-text="'/'" @click="updateOperator"></button>
@@ -42,13 +47,17 @@ export default {
       result: "",
       cashNum: "",
       cashOperator: "",
-      dot: true,
+      dotEnabled: true,
+      delEnabled: false,
     };
   },
   methods: {
     updateInput: function (event) {
       const inputNum = event.target.textContent;
       if (this.operator === "") {
+        if (!this.delEnabled) {
+          this.num1 = 0;
+        }
         if (this.num1 === "" && inputNum === ".") {
           this.num1 = 0;
         }
@@ -57,6 +66,7 @@ export default {
         }
         this.num1 += inputNum.toString();
         this.screenReader = this.num1;
+        this.delEnabled = true;
       } else {
         if (this.num2 === "" && inputNum === ".") {
           this.num2 = 0;
@@ -66,12 +76,14 @@ export default {
         }
         this.num2 += inputNum.toString();
         this.screenReader = this.num2;
+        this.delEnabled = true;
       }
     },
     updateOperator: function (event) {
       this.operatorProcess();
       const operator = event.target.textContent;
       this.operator = operator;
+      this.delEnabled = false;
     },
     calculate: function (operator, secondNum) {
       switch (operator) {
@@ -107,6 +119,7 @@ export default {
       ) {
         this.calculate(this.cashOperator, this.cashNum);
       }
+      this.delEnabled = false;
     },
     operatorProcess: function () {
       if (this.num2 !== "") {
@@ -121,9 +134,10 @@ export default {
       this.result = "";
       this.cashNum = "";
       this.cashOperator = "";
+      this.delEnabled = false;
     },
     del: function () {
-      if (this.screenReader === this.num1) {
+      if (this.screenReader === this.num1 && this.operator === "") {
         this.num1 = this.num1.toString().slice(0, -1);
         this.num1.toString() === "" ? (this.num1 = 0) : null;
         this.screenReader = this.num1;
@@ -136,7 +150,7 @@ export default {
   },
   watch: {
     screenReader: function (v) {
-      this.dot = !v.toString().includes(".");
+      this.dotEnabled = !v.toString().includes(".");
       this.$emit("sendValue", v);
     },
   },
