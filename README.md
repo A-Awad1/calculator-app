@@ -1,6 +1,6 @@
 # Calculator App [vue.js]
 
-<!-- **[See Website Live]()** -->
+**[See Website Live](https://calculator-app-vue-a-awad.netlify.app/)**
 
 This project is a challenge from [Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29).
 
@@ -21,7 +21,7 @@ This project is a challenge from [Frontend Mentor](https://www.frontendmentor.io
 - JavaScript (ECMAScript , BOM , BOM)
 - Jest (in progress)
 
-<!-- **[See Website Live]()** -->
+**[See Website Live](https://calculator-app-vue-a-awad.netlify.app/)**
 
 ## Run Project
 
