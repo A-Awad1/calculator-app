@@ -186,6 +186,31 @@ export default {
     },
   },
   emits: ["sendValue"],
+  mounted: function () {
+    let allButtons = document.querySelectorAll(`.keypad button`);
+    document.addEventListener("keydown", (event) => {
+      allButtons.forEach((e) => {
+        switch (event.key) {
+          case e.textContent:
+            e.click();
+            break;
+          case "Backspace":
+            e.textContent === "del" ? e.click() : null;
+            break;
+          case "Escape":
+            e.textContent === "reset" ? e.click() : null;
+            break;
+          case "Enter":
+            e.textContent === "=" ? e.click() : null;
+            break;
+          case "*":
+          case "X":
+            e.textContent === "x" ? e.click() : null;
+            break;
+        }
+      });
+    });
+  },
 };
 </script>
 
