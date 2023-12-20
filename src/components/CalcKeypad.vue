@@ -120,7 +120,7 @@ export default {
           break;
         case "/":
           if (+secondNum === 0) {
-            this.result = "Cannot divide by zero";
+            this.result = "Error";
             this.operatorsEnabled = false;
           } else {
             this.result = +this.num1 / +secondNum;

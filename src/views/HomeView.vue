@@ -19,7 +19,7 @@ export default {
   },
   computed: {
     finalReading: function () {
-      if (this.screenReading === "Cannot divide by zero") {
+      if (this.screenReading === "Error") {
         return this.screenReading;
       } else {
         let format = (+this.screenReading).toLocaleString();

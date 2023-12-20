@@ -41,6 +41,9 @@ section.screen {
     scrollbar-width: none;
     p {
       width: 0;
+      bdi {
+        white-space: nowrap;
+      }
     }
   }
 }
