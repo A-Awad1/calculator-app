@@ -188,24 +188,33 @@ export default {
   emits: ["sendValue"],
   mounted: function () {
     let allButtons = document.querySelectorAll(`.keypad button`);
+    allButtons.forEach((e) => e.addEventListener("click", () => e.blur()));
+    function clickProcess(e, text) {
+      if (!text ? true : e.textContent === text) {
+        e.click();
+        e.focus();
+        setTimeout(() => e.blur(), 250);
+      }
+    }
     document.addEventListener("keydown", (event) => {
+      event.preventDefault();
       allButtons.forEach((e) => {
         switch (event.key) {
           case e.textContent:
-            e.click();
+            clickProcess(e);
             break;
           case "Backspace":
-            e.textContent === "del" ? e.click() : null;
+            clickProcess(e, "del");
             break;
           case "Escape":
-            e.textContent === "reset" ? e.click() : null;
+            clickProcess(e, "reset");
             break;
           case "Enter":
-            e.textContent === "=" ? e.click() : null;
+            clickProcess(e, "=");
             break;
           case "*":
           case "X":
-            e.textContent === "x" ? e.click() : null;
+            clickProcess(e, "x");
             break;
         }
       });
@@ -270,7 +279,7 @@ section.keypad {
       z-index: -1;
       box-shadow: 0 3px 0 0 var(--key-main-shadow-color);
     }
-    &:active {
+    &:focus {
       filter: contrast(1.25) brightness(1.7);
       &::after {
         filter: brightness(0.8);
@@ -307,12 +316,6 @@ section.keypad {
     }
     &:disabled {
       cursor: no-drop;
-      &:active {
-        filter: brightness(1);
-        &::after {
-          filter: brightness(1);
-        }
-      }
       &.operator {
         opacity: 0.7;
       }
