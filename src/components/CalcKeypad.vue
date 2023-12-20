@@ -18,11 +18,13 @@
       v-text="'+'"
       @click="updateOperator"
       :disabled="!operatorsEnabled"
+      class="operator"
     ></button>
     <button
       v-text="'-'"
       @click="updateOperator"
       :disabled="!operatorsEnabled"
+      class="operator"
     ></button>
     <button
       v-text="'.'"
@@ -37,11 +39,13 @@
       v-text="'/'"
       @click="updateOperator"
       :disabled="!operatorsEnabled"
+      class="operator"
     ></button>
     <button
       v-text="'x'"
       @click="updateOperator"
       :disabled="!operatorsEnabled"
+      class="operator"
     ></button>
     <button
       v-text="'reset'"
@@ -101,6 +105,7 @@ export default {
       const operator = event.target.textContent;
       this.operator = operator;
       this.delEnabled = false;
+      this.dotEnabled = true;
     },
     calculate: function (operator, secondNum) {
       switch (operator) {
@@ -142,6 +147,7 @@ export default {
         this.calculate(this.cashOperator, this.cashNum);
       }
       this.delEnabled = false;
+      this.dotEnabled = true;
     },
     operatorProcess: function () {
       if (this.num2 !== "") {
@@ -173,7 +179,9 @@ export default {
   },
   watch: {
     screenReading: function (v) {
-      this.dotEnabled = !v.toString().includes(".");
+      if (this.delEnabled) {
+        this.dotEnabled = !v.toString().includes(".");
+      }
       this.$emit("sendValue", v);
     },
   },
@@ -273,13 +281,15 @@ section.keypad {
       }
     }
     &:disabled {
-      opacity: 0.7;
       cursor: no-drop;
       &:active {
         filter: brightness(1);
         &::after {
           filter: brightness(1);
         }
+      }
+      &.operator {
+        opacity: 0.7;
       }
     }
   }
