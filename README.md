@@ -6,16 +6,19 @@ This project is a challenge from [Frontend Mentor](https://www.frontendmentor.io
 
 ## Features:
 
-- Perform mathematical operations like addition, subtraction, multiplication, and division
-- Adjust between three color themes
-- See the size of the elements adjust based on their device's screen size
-- See hover states for all interactive elements on the page
+- Perform the most mathematical operations like addition, subtraction, multiplication, and division
+- Contains delete button to remove the last inputted number.
+- Contains reset button to remove any inputted value and reset the calculator.
+- Can use both of mouse and keyboard buttons to click on the keypad.
+- Adjust between three color themes and the theme sort stored in local storage.
+- See the size of the elements adjust based on their device's screen size.
+- See hover states for all interactive elements on the page.
 
 ## Technologies Used:
 
 - Vue 3
 - SCSS
-- JavaScript (ECMAScript , BOM)
+- JavaScript (ECMAScript , BOM , BOM)
 - Jest (in progress)
 
 <!-- **[See Website Live]()** -->
@@ -40,7 +43,6 @@ npm run serve
 npm run build
 ```
 
-<!--
 ## Output design Screenshots:
 
 Large Screen - theme 1:
@@ -54,4 +56,3 @@ Medium Screen - theme 2:
 Small Screen - theme 3:
 
 ![Output](/Output-design-screenshots/3.png)
--->
