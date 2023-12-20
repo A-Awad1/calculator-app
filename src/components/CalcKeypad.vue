@@ -14,8 +14,16 @@
       @click="del"
       :disabled="!delEnabled"
     ></button>
-    <button v-text="'+'" @click="updateOperator"></button>
-    <button v-text="'-'" @click="updateOperator"></button>
+    <button
+      v-text="'+'"
+      @click="updateOperator"
+      :disabled="!operatorsEnabled"
+    ></button>
+    <button
+      v-text="'-'"
+      @click="updateOperator"
+      :disabled="!operatorsEnabled"
+    ></button>
     <button
       v-text="'.'"
       @click="
@@ -25,8 +33,16 @@
       :disabled="!dotEnabled"
     ></button>
     <button v-text="'0'" @click="updateInput"></button>
-    <button v-text="'/'" @click="updateOperator"></button>
-    <button v-text="'x'" @click="updateOperator"></button>
+    <button
+      v-text="'/'"
+      @click="updateOperator"
+      :disabled="!operatorsEnabled"
+    ></button>
+    <button
+      v-text="'x'"
+      @click="updateOperator"
+      :disabled="!operatorsEnabled"
+    ></button>
     <button
       v-text="'reset'"
       class="second-button reset"
@@ -49,6 +65,7 @@ export default {
       cashOperator: "",
       dotEnabled: true,
       delEnabled: false,
+      operatorsEnabled: true,
     };
   },
   methods: {
@@ -66,7 +83,6 @@ export default {
         }
         this.num1 += inputNum.toString();
         this.screenReading = this.num1;
-        this.delEnabled = true;
       } else {
         if (this.num2 === "" && inputNum === ".") {
           this.num2 = 0;
@@ -76,8 +92,9 @@ export default {
         }
         this.num2 += inputNum.toString();
         this.screenReading = this.num2;
-        this.delEnabled = true;
       }
+      this.delEnabled = true;
+      this.operatorsEnabled = true;
     },
     updateOperator: function (event) {
       this.operatorProcess();
@@ -97,7 +114,12 @@ export default {
           this.result = +this.num1 * +secondNum;
           break;
         case "/":
-          this.result = +this.num1 / +secondNum;
+          if (+secondNum === 0) {
+            this.result = "Cannot divide by zero";
+            this.operatorsEnabled = false;
+          } else {
+            this.result = +this.num1 / +secondNum;
+          }
           break;
       }
       this.screenReading = this.result;
@@ -146,6 +168,7 @@ export default {
       this.cashNum = "";
       this.cashOperator = "";
       this.delEnabled = false;
+      this.operatorsEnabled = true;
     },
   },
   watch: {
@@ -247,6 +270,16 @@ section.keypad {
       }
       &::after {
         box-shadow: 0 3px 0 0 var(--key-third-shadow-color);
+      }
+    }
+    &:disabled {
+      opacity: 0.7;
+      cursor: no-drop;
+      &:active {
+        filter: brightness(1);
+        &::after {
+          filter: brightness(1);
+        }
       }
     }
   }

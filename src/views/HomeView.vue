@@ -1,7 +1,7 @@
 <template>
   <main>
     <calc-header></calc-header>
-    <calc-screen>{{ screenReading }}</calc-screen>
+    <calc-screen>{{ finalReading }}</calc-screen>
     <calc-keypad @sendValue="updateValue"></calc-keypad>
   </main>
 </template>
@@ -16,6 +16,19 @@ export default {
     return {
       screenReading: 0,
     };
+  },
+  computed: {
+    finalReading: function () {
+      if (this.screenReading === "Cannot divide by zero") {
+        return this.screenReading;
+      } else {
+        let format = (+this.screenReading).toLocaleString();
+        if (this.screenReading.toString().slice(-1) === ".") {
+          format += ".";
+        }
+        return format;
+      }
+    },
   },
   methods: {
     updateValue: function (v) {
