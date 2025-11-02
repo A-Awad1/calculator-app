@@ -1,4 +1,4 @@
-# Calculator App [vue.js]
+# Calculator App [Vue.js]
 
 **[See Website Live](https://calculator-app-vue-a-awad.netlify.app/)**
 
