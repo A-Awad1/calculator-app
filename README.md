@@ -19,7 +19,6 @@ This project is a challenge from [Frontend Mentor](https://www.frontendmentor.io
 - SCSS
 - JavaScript (ECMAScript , DOM , BOM)
 - Gulp
-- Jest (in progress)
 
 **[See Application Live](https://calculator-app-a-awad.netlify.app/)**
 
